@@ -4,7 +4,7 @@ import Button from './UI/Button'
 import CartContext from '../store/CartContext';
 import UserProgressContext from '../store/UserProgressContext';
 
-export default function Header({ items }) {
+export default function Header() {
   const cartCtx = useContext(CartContext);
   const userCtx = useContext(UserProgressContext)
   const totalCartItems = cartCtx.items.reduce((totaNumberOfItems, item) => {
@@ -12,7 +12,7 @@ export default function Header({ items }) {
   }, 0);
 
 function handleShowCart(){
-  userCtx.showCart
+  userCtx.showCart()
 }
 
   return (
